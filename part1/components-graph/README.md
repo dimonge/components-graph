@@ -42,6 +42,9 @@
       - [x] Code coverage with jest
   - [ ] CI
     - [ ] Automate test and code coverage with Github actions
+      - [ ] Run unit and test with jest
+      - [ ] Run unit & integration test code coverage
+      - [ ] Run the end-to-end test cases
     - [ ] Deploy to Netlify
       - [ ] Trigger auto deployment to Netlify
 
