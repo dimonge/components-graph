@@ -20,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:test": "npx cypress open-ct",
+    "cypress-background:test": "npx cypress run-ct"
   },
   "eslintConfig": {
     "extends": [
@@ -41,8 +43,11 @@
     ]
   },
   "devDependencies": {
+    "@cypress/react": "^5.9.4",
+    "@cypress/webpack-dev-server": "^1.5.0",
     "@testing-library/cypress": "^8.0.0",
     "cypress": "^8.3.1",
+    "html-webpack-plugin": "4",
     "react-test-renderer": "^17.0.2"
   }
 }
