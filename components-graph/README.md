@@ -41,12 +41,12 @@
     - [x] Code coverage for unit, and integration test
       - [x] Code coverage with jest
   - [ ] CI
-    - [ ] Automate test and code coverage with Github actions
-      - [ ] Run unit and test with jest
-      - [ ] Run unit & integration test code coverage
-      - [ ] Run the end-to-end test cases
-    - [ ] Deploy to Netlify
-      - [ ] Trigger auto deployment to Netlify
+    - [x] Automate test and code coverage with Github actions
+      - [x] Run unit and test with jest
+      - [x] Run unit & integration test code coverage
+      - [x] Run the end-to-end test cases
+    - [x] Deploy to Netlify
+      - [x] Trigger auto deployment to Netlify
 
 **Sprint 2**
 

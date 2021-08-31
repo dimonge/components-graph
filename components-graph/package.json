@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:test": "npx cypress open-ct",
-    "cypress-background:test": "npx cypress run-ct",
+    "cypress-headless:test": "npx cypress run-ct",
     "test:coverage": "yarn test -- --coverage --watchAll=false"
   },
   "eslintConfig": {

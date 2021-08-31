@@ -9,3 +9,7 @@ jobs:
         run: yarn
       - name: Run tests
         run: yarn test
+      - name: Run code coverage
+        run: yarn test:coverage
+      - name: Run end to end test case
+        run: yarn cypress-headless:test
