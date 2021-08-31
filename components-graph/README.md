@@ -31,16 +31,16 @@
 
 **Sprint 1**
 
-- [ ] Environment deployment
-  - [ ] Local dev
-    - [ ] Jest for unit and integration test
+- [x] Environment deployment
+  - [x] Local dev
+    - [x] Jest for unit and integration test
       - [x] Unit test with Jest
       - [x] Integration test with Jest
     - [x] Cypress for end-to-end test
       - [x] End-to-end tests with Cypress
     - [x] Code coverage for unit, and integration test
       - [x] Code coverage with jest
-  - [ ] CI
+  - [x] CI
     - [x] Automate test and code coverage with Github actions
       - [x] Run unit and test with jest
       - [x] Run unit & integration test code coverage
