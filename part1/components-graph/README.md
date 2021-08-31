@@ -34,8 +34,8 @@
 - [ ] Environment deployment
   - [ ] Local dev
     - [ ] Jest for unit and integration test
-      - [ ] Unit test with Jest
-      - [ ] Integration test with Jest
+      - [x] Unit test with Jest
+      - [x] Integration test with Jest
     - [ ] Cypress for end-to-end test
       - [ ] End-to-end tests with Cypress
     - [ ] Code coverage for unit, integration and end-to-end test
