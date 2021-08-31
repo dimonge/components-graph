@@ -36,10 +36,10 @@
     - [ ] Jest for unit and integration test
       - [x] Unit test with Jest
       - [x] Integration test with Jest
-    - [ ] Cypress for end-to-end test
-      - [ ] End-to-end tests with Cypress
-    - [ ] Code coverage for unit, integration and end-to-end test
-      - [ ] Code coverage with nyc
+    - [x] Cypress for end-to-end test
+      - [x] End-to-end tests with Cypress
+    - [x] Code coverage for unit, and integration test
+      - [x] Code coverage with jest
   - [ ] CI
     - [ ] Automate test and code coverage with Github actions
     - [ ] Deploy to Netlify
