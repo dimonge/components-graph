@@ -50,13 +50,17 @@
 
 **Sprint 2**
 
-- [ ] Basic structure & elements from the wireframe.
-- [ ] Use D3.js to display the graph from "components.json" (d3js.org).
-- [ ] Name each component with the node.name provided.
-- [ ] Colour each component with the node.color provided.
+- [x] Basic structure & elements from the wireframe.
+- [x] Use D3.js to display the graph from "components.json" (d3js.org).
+- [x] Name each component with the node.name provided.
+  - use label to add the node.name
+- [x] Colour each component with the node.color provided.
 - [ ] Position each component vertically with the node.y values provided.
+  - y coordinate
 - [ ] Position each component horizontally with the node.evolution values provided (0=left, 5=right)
-- [ ] Ensure nodes don't collide with each other.
+  - x coordinate
+  - 0, 1, 2, 3, 4, 5
+- [x] Ensure nodes don't collide with each other.
 - [ ] Include a Readme that explains how to test the site.
 
 **Sprint 3**

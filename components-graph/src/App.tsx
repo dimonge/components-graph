@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import data from "./data/components.json";
+import Graph from "./components/Graph";
+import Search from "./components/Search";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="container">
+      <header className="header">
+        <div className="header__title">
+          <h1>Capital Flow</h1>
+        </div>
+        <div className="header__action">
+          <div className="header__action-search">
+            <Search />
+          </div>
+          <div className="header__action-profile">profile icon</div>
+        </div>
       </header>
+      <main>
+        <Graph data={data} />
+      </main>
     </div>
   );
 }
