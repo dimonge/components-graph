@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import data from "./data/components.json";
 import Graph from "./components/Graph";
-import Search from "./components/Search";
+import SearchField from "./components/SearchField";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         </div>
         <div className="header__action">
           <div className="header__action-search">
-            <Search />
+            <SearchField />
           </div>
           <div className="header__action-profile">profile icon</div>
         </div>

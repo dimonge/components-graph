@@ -28,7 +28,7 @@ export default function buildGraph(
     .select(container)
     .append("svg")
     .attr("width", containerRect.width)
-    .attr("height", containerRect.height)
+    .attr("height", 6000)
     .append("g");
 
   const link = svg
@@ -55,12 +55,15 @@ export default function buildGraph(
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "central");
 
-  const myScale = d3.scaleLinear().domain([1, 5]).range([0, width]);
+  const xScale = d3
+    .scaleLinear()
+    .domain([1, 5])
+    .range([50, containerRect.width]);
 
   const ticked = () => {
     node
       .attr("cx", function (d: any) {
-        return myScale(d.evolution);
+        return xScale(d.evolution);
       })
       .attr("cy", function (d: any) {
         return d.y;
@@ -68,21 +71,19 @@ export default function buildGraph(
 
     link
       .attr("x1", function (d: any) {
-        return myScale(d.source.evolution);
+        return xScale(d.source.evolution);
       })
       .attr("y1", function (d: any) {
         return d.source.y;
       })
       .attr("x2", function (d: any) {
-        return myScale(d.target.evolution);
+        return xScale(d.target.evolution);
       })
       .attr("y2", function (d: any) {
         return d.target.y;
       });
 
-    label
-      .attr("x", (d: any) => myScale(d.evolution))
-      .attr("y", (d: any) => d.y);
+    label.attr("x", (d: any) => xScale(d.evolution)).attr("y", (d: any) => d.y);
   };
 
   const simulation = d3
@@ -95,16 +96,17 @@ export default function buildGraph(
         .links(links)
     )
     .force("charge", d3.forceManyBody().strength(-1000))
-    //.force("center", d3.forceCenter(width, height / 2))
     .force(
       "x",
       d3.forceX().x((d: any) => {
-        return myScale(d.evolution);
+        return xScale(d.evolution);
       })
     )
     .force(
       "y",
-      d3.forceY().y((d: any) => d.y)
+      d3.forceY().y((d: any) => {
+        return d.y / 2;
+      })
     )
     .on("end", ticked);
 
