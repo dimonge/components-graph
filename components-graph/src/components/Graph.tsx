@@ -1,8 +1,7 @@
 import * as React from "react";
 import { IComponents } from "../types";
-import runGraph from "./runGraph";
+import buildGraph from "./buildGraph";
 import styles from "./graph.module.css";
-//github.com/danielcaldas/react-d3-graph/blob/master/src/components/graph/Graph.jsx
 
 interface IGraph {
   data: IComponents;
@@ -15,7 +14,7 @@ const Graph = ({ data }: IGraph) => {
     let fn;
 
     if (containerRef.current) {
-      const { destroy } = runGraph(
+      const { destroy } = buildGraph(
         containerRef.current,
         data.links,
         data.nodes

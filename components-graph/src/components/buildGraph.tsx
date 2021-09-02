@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import { ILink, INode, LinksType, NodesType } from "../types";
 
-export default function runGraph(
+export default function buildGraph(
   container: HTMLDivElement,
   linksData: LinksType,
   nodesData: NodesType
