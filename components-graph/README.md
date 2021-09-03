@@ -1,6 +1,6 @@
 # Components graph
 
-This is a network graph powered by d3 Force API.
+The component graph is powered by d3 Force API used to build network graph that has a relationship via links with the nodes.
 
 ## How to run the app
 
@@ -36,10 +36,9 @@ yarn start
 yarn test
 ```
 
-- Run the end-to-end test
+## Running in production
 
-```javascript
-yarn cypress-headless:test
+The app is hosted on Netlify and can be viewed [here](https://elegant-bohr-f8ee99.netlify.app/)
 
 ## Requirements
 
@@ -114,6 +113,10 @@ yarn cypress-headless:test
 - [x] Unit test the graph functions and React components
 
 **Sprint 5**
+
 - [ ] End-to-end test cases
-- [ ] Code Refactoring
+- [x] Code Refactoring
+
+```
+
 ```
