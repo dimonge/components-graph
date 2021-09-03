@@ -24,10 +24,11 @@ yarn start
 
 The app will be running in the default url `http://localhost:3000`
 
-### Test functionality
+### How to test the app
 
-- The graph will be loaded once the app loaded. The label is visible ontop of the nodes.
-- There is a search functionality. You can input for example `user`, then click the
+- Once the app is loaded, the network graph will show the label on top of the nodes.
+- There is the search functionality. You can input for example `user`, then click the search icon button. The graph will rerender and highlight the label on the nodes that match the search text (the color will change from black to yellow).
+- Mobile view: You can also view the graph on the small devices.
 
 **Run tests**
 
