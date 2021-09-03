@@ -116,7 +116,3 @@ The app is hosted on Netlify and can be viewed [here](https://elegant-bohr-f8ee9
 
 - [ ] End-to-end test cases
 - [x] Code Refactoring
-
-```
-
-```
