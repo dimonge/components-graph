@@ -3,7 +3,7 @@
 }
 
 .search__input {
-  width: 70%;
+  width: 65%;
   height: 30px;
   margin: 5px;
 }
@@ -19,6 +19,8 @@
     margin: 0;
   }
   .search__container {
+    display: flex;
     margin: 0;
+    margin-right: 10px;
   }
 }

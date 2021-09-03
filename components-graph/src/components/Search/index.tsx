@@ -30,7 +30,7 @@ function Search({ onChange }: ISearchField) {
         toggleSearch={toggleSearch}
         onClick={(text: any) => onChange(text)}
       />
-      {mobileSearchButton}
+      {!toggleSearch && mobileSearchButton}
     </div>
   );
 }
