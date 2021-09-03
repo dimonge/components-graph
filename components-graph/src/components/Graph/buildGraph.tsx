@@ -125,8 +125,8 @@ const generateGraph = ({
         .id((d: any) => d.id)
         .links(links)
     )
-    .force("charge", d3.forceManyBody().strength(-1000))
-    .force("collide", d3.forceCollide().radius(10).strength(-400))
+    .force("charge", d3.forceManyBody().strength(-500))
+    .force("collide", d3.forceCollide().radius(20))
     .force(
       "x",
       d3.forceX().x((d: any) => {
