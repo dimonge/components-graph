@@ -1,12 +1,12 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import SearchInput from "./SearchInput";
+import SearchField from "./SearchField";
 
 describe("SearchInput", () => {
   it("should create snapshot", () => {
     const tree = renderer
       .create(
-        <SearchInput
+        <SearchField
           toggleSearch={false}
           onClick={(value: any) => console.log(value)}
         />

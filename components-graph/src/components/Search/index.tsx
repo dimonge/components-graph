@@ -5,7 +5,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 
 import "./index.module.css";
 import SearchIcon from "./SearchIcon";
-import SearchInput from "./SearchInput";
+import SearchField from "./SearchField";
 
 const MOBILE_WIDTH_SIZE = 320;
 
@@ -26,7 +26,7 @@ function Search({ onChange }: ISearchField) {
 
   return (
     <div className="header__action-search">
-      <SearchInput
+      <SearchField
         toggleSearch={toggleSearch}
         onClick={(text: any) => onChange(text)}
       />
