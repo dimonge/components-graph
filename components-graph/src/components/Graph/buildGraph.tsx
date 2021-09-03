@@ -15,47 +15,33 @@ export const createSvg = (
 
   return svg;
 };
-export default function buildGraph(
-  container: HTMLDivElement,
-  linksData: LinksType,
-  nodesData: NodesType,
-  searchText: string
-) {
-  const links = linksData.map((link: ILink) => Object.assign({}, link));
-  const nodes = nodesData.map((node: INode) => Object.assign({}, node));
 
-  const containerRect = container.getBoundingClientRect();
-
-  const width: number = containerRect.width;
-  const height: number = containerRect.height;
-
-  if (d3.select(container).select("svg")) {
-    d3.select(container).select("svg").remove();
-  }
-
-  const svg = createSvg(container, width, height);
-
-  const link = svg
+export const createLink = (svg: any, links: LinksType) => {
+  return svg
     .selectAll("line")
     .data(links)
     .enter()
     .append("line")
     .attr("stroke", "grey");
+};
 
-  const node = svg
+export const createNode = (svg: any, nodes: NodesType) => {
+  return svg
     .selectAll("circle")
     .data(nodes)
     .enter()
     .append("circle")
     .attr("r", 20)
-    .attr("fill", (d) => d.color);
+    .attr("fill", (d: any) => d.color);
+};
 
-  const label = svg
+export const createLabel = (svg: any, nodes: NodesType, searchText: string) => {
+  return svg
     .selectAll("text")
     .data(nodes)
     .enter()
     .append("text")
-    .text((d) => d.name)
+    .text((d: any) => d.name)
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "central")
     .attr("fill", (d: any) => {
@@ -68,14 +54,43 @@ export default function buildGraph(
         return null;
       }
     });
+};
 
+export const createScale = (
+  nodes: NodesType,
+  width: number,
+  height: number
+) => {
   const xScale = d3.scaleLinear().domain([1, 5]).range([50, width]);
-
   const yScale = d3
     .scaleLinear()
-    .domain([100, d3.max(nodes, (d: any) => d.y)])
-    .range([100, height]);
+    .domain([0, d3.max(nodes, (d: any) => d.y)])
+    .range([200, height]);
 
+  return { xScale, yScale };
+};
+
+type generateGraphType = {
+  svg: any;
+  nodes: NodesType;
+  links: LinksType;
+  searchText: string;
+  width: number;
+  height: number;
+};
+const generateGraph = ({
+  svg,
+  nodes,
+  links,
+  searchText,
+  width,
+  height,
+}: generateGraphType) => {
+  const link = createLink(svg, links);
+  const node = createNode(svg, nodes);
+  const label = createLabel(svg, nodes, searchText);
+
+  const { xScale, yScale } = createScale(nodes, width, height);
   const ticked = () => {
     node
       .attr("cx", function (d: any) {
@@ -125,7 +140,27 @@ export default function buildGraph(
       })
     )
     .on("end", ticked);
+};
+export default function buildGraph(
+  container: HTMLDivElement,
+  linksData: LinksType,
+  nodesData: NodesType,
+  searchText: string
+) {
+  const links = linksData.map((link: ILink) => Object.assign({}, link));
+  const nodes = nodesData.map((node: INode) => Object.assign({}, node));
 
+  const containerRect = container.getBoundingClientRect();
+
+  const width: number = containerRect.width;
+  const height: number = containerRect.height;
+
+  if (d3.select(container).select("svg")) {
+    d3.select(container).select("svg").remove();
+  }
+
+  const svg = createSvg(container, width, height);
+  generateGraph({ svg, nodes, links, searchText, width, height });
   return {
     destroy: () => {
       svg.remove();
