@@ -112,5 +112,8 @@ yarn cypress-headless:test
 - [x] Functional Search that highlights matching node names
   - [x] Add a search that user can select when the names is typed, returns not found if there is no match.
 - [x] Unit test the graph functions and React components
+
+**Sprint 5**
 - [ ] End-to-end test cases
+- [ ] Code Refactoring
 ```

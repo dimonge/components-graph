@@ -1,9 +1,18 @@
 .search__container {
   margin-right: 20px;
 }
-.search__icon {
-  display: none;
+
+.header__action-search {
+  display: flex;
 }
+.header__action-search input {
+  width: 70%;
+}
+
+.header__action-search button {
+  width: 30%;
+}
+
 @media only screen and (max-width: 320px) {
   .container {
     border: 0;
@@ -11,11 +20,5 @@
   }
   .search__container {
     margin: 0;
-  }
-  .search__container input {
-    display: none;
-  }
-  .header__action-searchIcon {
-    display: block;
   }
 }
