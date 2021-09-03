@@ -5,11 +5,6 @@ import SearchIcon from "./SearchIcon";
 
 const MOBILE_WIDTH_SIZE = 320;
 
-interface ISearchInput {
-  toggleSearch: boolean;
-  onClick: (text: string) => void;
-}
-
 function SearchInput({ toggleSearch, onClick }: any) {
   const { width } = useWindowSize();
   const [text, setText] = React.useState("");
