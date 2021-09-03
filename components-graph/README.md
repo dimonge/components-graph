@@ -40,7 +40,7 @@ yarn test
 View the code coverage
 
 ```javascript
-yarn;
+yarn test:coverage
 ```
 
 ## Running in production
