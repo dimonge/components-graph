@@ -8,6 +8,8 @@ To the next interview, bring the list of reasons and be ready for a conversation
 
 The design on the **right** provides a better user experience.
 
+![Screen review](turtles-view-review.jpg)
+
 - (1.) **The back arrow (top-left icon)**: aligned with the header content like the title and the more icon on the right (the icon).
 
 - (2.) **The header title** is visible and readable.
