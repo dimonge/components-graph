@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { ILink, INode, LinksType, NodesType } from "../../types";
 
+const NODE_RADIUS = 20;
 export const createSvg = (
   container: HTMLDivElement,
   width: number,
@@ -31,7 +32,7 @@ export const createNode = (svg: any, nodes: NodesType) => {
     .data(nodes)
     .enter()
     .append("circle")
-    .attr("r", 20)
+    .attr("r", NODE_RADIUS)
     .attr("fill", (d: any) => d.color);
 };
 
@@ -126,7 +127,6 @@ const generateGraph = ({
         .links(links)
     )
     .force("charge", d3.forceManyBody().strength(-500))
-    .force("collide", d3.forceCollide().radius(20))
     .force(
       "x",
       d3.forceX().x((d: any) => {
@@ -141,6 +141,7 @@ const generateGraph = ({
     )
     .on("end", ticked);
 };
+
 export default function buildGraph(
   container: HTMLDivElement,
   linksData: LinksType,
