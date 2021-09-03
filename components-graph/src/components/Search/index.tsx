@@ -2,7 +2,7 @@ import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import { ISearchField } from "../types";
+import { ISearchField } from "../../types";
 
 function Search({ onChange }: ISearchField) {
   const [text, setText] = React.useState("");

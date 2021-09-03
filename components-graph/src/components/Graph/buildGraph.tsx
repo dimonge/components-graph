@@ -1,6 +1,20 @@
 import * as d3 from "d3";
-import { ILink, INode, LinksType, NodesType } from "../types";
+import { ILink, INode, LinksType, NodesType } from "../../types";
 
+export const createSvg = (
+  container: HTMLDivElement,
+  width: number,
+  height: number
+) => {
+  const svg = d3
+    .select(container)
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g");
+
+  return svg;
+};
 export default function buildGraph(
   container: HTMLDivElement,
   linksData: LinksType,
@@ -19,12 +33,7 @@ export default function buildGraph(
     d3.select(container).select("svg").remove();
   }
 
-  const svg = d3
-    .select(container)
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g");
+  const svg = createSvg(container, width, height);
 
   const link = svg
     .selectAll("line")

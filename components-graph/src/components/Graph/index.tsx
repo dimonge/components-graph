@@ -1,7 +1,7 @@
 import * as React from "react";
-import { IComponents } from "../types";
+import { IComponents } from "../../types";
 import buildGraph from "./buildGraph";
-import styles from "./graph.module.css";
+import styles from "./index.module.css";
 
 interface IGraph {
   data: IComponents;

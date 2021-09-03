@@ -2,9 +2,9 @@ import * as React from "react";
 import "./App.css";
 
 import data from "./data/components.json";
-import Graph from "./components/Graph";
-import SearchField from "./components/SearchField";
-import Profile from "./components/Profile";
+import Graph from "./components/Graph/index";
+import SearchField from "./components/Search/index";
+import Profile from "./components/Profile/index";
 
 function App() {
   const [searchText, setSearchText] = React.useState("");
