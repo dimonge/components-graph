@@ -24,6 +24,7 @@ const Graph = ({ data, searchText }: IGraph) => {
       fn = destroy;
     }
     return fn;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
   return <div ref={containerRef} className={styles.container} />;

@@ -8,19 +8,11 @@ export default function buildGraph(
   searchText: string
 ) {
   const links = linksData.map((link: ILink) => Object.assign({}, link));
-  const nodes = nodesData.map((node: INode) => Object.assign(node));
+  const nodes = nodesData.map((node: INode) => Object.assign({}, node));
 
   const containerRect = container.getBoundingClientRect();
 
-  /*const margin = {
-    top: containerRect.top,
-    right: containerRect.right,
-    bottom: containerRect.bottom,
-    left: containerRect.bottom,
-  };*/
-
   const width: number = containerRect.width;
-
   const height: number = containerRect.height;
 
   if (d3.select(container).select("svg")) {
@@ -98,8 +90,7 @@ export default function buildGraph(
     label.attr("x", (d: any) => xScale(d.evolution)).attr("y", (d: any) => d.y);
   };
 
-  const simulation = d3
-    .forceSimulation(nodes)
+  d3.forceSimulation(nodes)
     .force(
       "link",
       d3

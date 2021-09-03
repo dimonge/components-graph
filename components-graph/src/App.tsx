@@ -9,12 +9,10 @@ import Profile from "./components/Profile";
 function App() {
   const [searchText, setSearchText] = React.useState("");
 
-  const onSearchComponents = React.useCallback(
-    (value) => {
-      setSearchText(value);
-    },
-    [searchText]
-  );
+  const onSearchComponents = (value: string): void => {
+    setSearchText(value);
+  };
+
   return (
     <div className="container">
       <header className="header">
