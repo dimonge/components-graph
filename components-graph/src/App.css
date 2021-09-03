@@ -10,6 +10,7 @@ body {
   margin: 0.5rem 1rem;
   padding: 0.5rem;
 }
+
 .header__action {
   display: flex;
   justify-content: space-between;
@@ -17,4 +18,20 @@ body {
 
 .header__action-search {
   margin-right: 20px;
+}
+.header__action-searchIcon {
+  display: none;
+}
+@media only screen and (max-width: 320px) {
+  .container {
+    border: 0;
+    margin: 0;
+  }
+  .header__action-search {
+    margin-right: 0;
+    display: none;
+  }
+  .header__action-searchIcon {
+    display: block;
+  }
 }

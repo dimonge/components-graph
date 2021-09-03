@@ -17,17 +17,14 @@ export default function buildGraph(
     left: containerRect.bottom,
   };
 
-  const width: number = Math.abs(
-    containerRect.width - margin.left - margin.right
-  );
-  const height: number = Math.abs(
-    containerRect.height - margin.top - margin.bottom
-  );
+  const width: number = containerRect.width;
+
+  const height: number = containerRect.height;
 
   const svg = d3
     .select(container)
     .append("svg")
-    .attr("width", containerRect.width)
+    .attr("width", width)
     .attr("height", 6000)
     .append("g");
 
@@ -55,10 +52,7 @@ export default function buildGraph(
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "central");
 
-  const xScale = d3
-    .scaleLinear()
-    .domain([1, 5])
-    .range([50, containerRect.width]);
+  const xScale = d3.scaleLinear().domain([1, 5]).range([50, width]);
 
   const ticked = () => {
     node
@@ -96,6 +90,7 @@ export default function buildGraph(
         .links(links)
     )
     .force("charge", d3.forceManyBody().strength(-1000))
+    .force("collide", d3.forceCollide())
     .force(
       "x",
       d3.forceX().x((d: any) => {
