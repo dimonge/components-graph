@@ -1,4 +1,0 @@
-{
-  "testFiles": "**/*.test.{js,ts,jsx,tsx}",
-  "components": "."
-}
