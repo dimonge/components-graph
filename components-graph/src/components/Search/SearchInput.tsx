@@ -18,7 +18,7 @@ function SearchInput({ toggleSearch, onClick }: any) {
     setText(event.target.value);
   };
 
-  const isInputVisible = toggleSearch; //|| width > MOBILE_WIDTH_SIZE;
+  const isInputVisible = toggleSearch || width > MOBILE_WIDTH_SIZE;
   const searchInput = isInputVisible && (
     <div>
       <input value={text} onChange={handleChange} />

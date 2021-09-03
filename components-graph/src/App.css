@@ -22,6 +22,7 @@ body {
 .header__action-searchIcon {
   display: none;
 }
+
 @media only screen and (max-width: 320px) {
   .container {
     border: 0;
