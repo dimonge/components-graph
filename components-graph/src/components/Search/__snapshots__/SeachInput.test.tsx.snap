@@ -3,15 +3,17 @@
 exports[`SearchInput should create snapshot 1`] = `
 <div>
   <input
+    className="search__input"
     onChange={[Function]}
     value=""
   />
   <button
+    className="search__button"
     onClick={[Function]}
   >
     <svg
       aria-hidden="true"
-      className="svg-inline--fa fa-search fa-w-16 "
+      className="svg-inline--fa fa-search fa-w-16 fa-lg "
       data-icon="search"
       data-prefix="fas"
       focusable="false"
