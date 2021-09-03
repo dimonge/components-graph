@@ -3,7 +3,7 @@ import * as React from "react";
 import { ISearchField } from "../../types";
 import useWindowSize from "../../hooks/useWindowSize";
 
-import "./index.module.css";
+import styles from "./index.module.css";
 import SearchIcon from "./SearchIcon";
 import SearchField from "./SearchField";
 
@@ -25,7 +25,7 @@ function Search({ onChange }: ISearchField) {
     ) : null;
 
   return (
-    <div className="header__action-search">
+    <div className={styles.search__container}>
       <SearchField
         toggleSearch={toggleSearch}
         onClick={(text: any) => onChange(text)}

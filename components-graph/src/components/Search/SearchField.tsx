@@ -2,6 +2,7 @@ import * as React from "react";
 
 import useWindowSize from "../../hooks/useWindowSize";
 import SearchIcon from "./SearchIcon";
+import styles from "./index.module.css";
 
 const MOBILE_WIDTH_SIZE = 320;
 
@@ -16,8 +17,12 @@ function SearchField({ toggleSearch, onClick }: any) {
   const isInputVisible = toggleSearch || width > MOBILE_WIDTH_SIZE;
   const searchInput = isInputVisible && (
     <div>
-      <input value={text} onChange={handleChange} />
-      <button onClick={() => onClick(text)}>
+      <input
+        className={styles.search__input}
+        value={text}
+        onChange={handleChange}
+      />
+      <button className={styles.search__button} onClick={() => onClick(text)}>
         <SearchIcon />
       </button>
     </div>

@@ -2,15 +2,15 @@
   margin-right: 20px;
 }
 
-.header__action-search {
-  display: flex;
-}
-.header__action-search input {
+.search__input {
   width: 70%;
+  height: 30px;
+  margin: 5px;
 }
 
-.header__action-search button {
-  width: 30%;
+.search__button {
+  width: 20%;
+  height: 30px;
 }
 
 @media only screen and (max-width: 320px) {

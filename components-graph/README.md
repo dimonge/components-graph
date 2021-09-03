@@ -10,23 +10,24 @@ You can find that [https://nodejs.org/en/download/](here)
 
 Follow the setups to run the app
 
-1. Install the packages using the command `yarn`
+### Installation
 
 ```javascript
 yarn;
 ```
 
-2. Run the app using
+### Run the app
 
 ```javascript
 yarn start
 ```
 
-3. The app will be running in the default url `http://localhost:3000`
+The app will be running in the default url `http://localhost:3000`
 
-4. The graph should be visible for you to see with the label
+### Test functionality
 
-5. The search functionality
+- The graph will be loaded once the app loaded. The label is visible ontop of the nodes.
+- There is a search functionality. You can input for example `user`, then click the
 
 **Run tests**
 
@@ -34,6 +35,12 @@ yarn start
 
 ```javascript
 yarn test
+```
+
+View the code coverage
+
+```javascript
+yarn;
 ```
 
 ## Running in production
@@ -46,8 +53,6 @@ The app is hosted on Netlify and can be viewed [here](https://elegant-bohr-f8ee9
 
 - React + Typescript
 - Jest
-- Cypress for end-to-end test
-- Nyc for code coverage
 - Nelify to host
 
 - **Features**
@@ -76,8 +81,6 @@ The app is hosted on Netlify and can be viewed [here](https://elegant-bohr-f8ee9
     - [x] Jest for unit and integration test
       - [x] Unit test with Jest
       - [x] Integration test with Jest
-    - [x] Cypress for end-to-end test
-      - [x] End-to-end tests with Cypress
     - [x] Code coverage for unit, and integration test
       - [x] Code coverage with jest
   - [x] CI
@@ -114,5 +117,4 @@ The app is hosted on Netlify and can be viewed [here](https://elegant-bohr-f8ee9
 
 **Sprint 5**
 
-- [ ] End-to-end test cases
 - [x] Code Refactoring
