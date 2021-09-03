@@ -5,9 +5,10 @@ import styles from "./graph.module.css";
 
 interface IGraph {
   data: IComponents;
+  searchText: string;
 }
 
-const Graph = ({ data }: IGraph) => {
+const Graph = ({ data, searchText }: IGraph) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -17,12 +18,14 @@ const Graph = ({ data }: IGraph) => {
       const { destroy } = buildGraph(
         containerRef.current,
         data.links,
-        data.nodes
+        data.nodes,
+        searchText
       );
       fn = destroy;
     }
     return fn;
-  }, []);
+  }, [searchText]);
+
   return <div ref={containerRef} className={styles.container} />;
 };
 

@@ -4,10 +4,11 @@ import { ILink, INode, LinksType, NodesType } from "../types";
 export default function buildGraph(
   container: HTMLDivElement,
   linksData: LinksType,
-  nodesData: NodesType
+  nodesData: NodesType,
+  searchText: string
 ) {
   const links = linksData.map((link: ILink) => Object.assign({}, link));
-  const nodes = nodesData.map((node: INode) => Object.assign({}, node));
+  const nodes = nodesData.map((node: INode) => Object.assign(node));
 
   const containerRect = container.getBoundingClientRect();
 
@@ -22,11 +23,15 @@ export default function buildGraph(
 
   const height: number = containerRect.height;
 
+  if (d3.select(container).select("svg")) {
+    d3.select(container).select("svg").remove();
+  }
+
   const svg = d3
     .select(container)
     .append("svg")
     .attr("width", width)
-    .attr("height", 6000)
+    .attr("height", height)
     .append("g");
 
   const link = svg
@@ -51,9 +56,21 @@ export default function buildGraph(
     .append("text")
     .text((d) => d.name)
     .attr("text-anchor", "middle")
-    .attr("dominant-baseline", "central");
+    .attr("dominant-baseline", "central")
+    .attr("fill", (d: any) => {
+      if (searchText && d.name.toLowerCase().indexOf(searchText) !== -1) {
+        return "yellow";
+      } else {
+        return null;
+      }
+    });
 
   const xScale = d3.scaleLinear().domain([1, 5]).range([50, width]);
+
+  const yScale = d3
+    .scaleLinear()
+    .domain([100, d3.max(nodes, (d: any) => d.y)])
+    .range([100, height]);
 
   const ticked = () => {
     node
@@ -101,14 +118,14 @@ export default function buildGraph(
     .force(
       "y",
       d3.forceY().y((d: any) => {
-        return d.y / 2;
+        return yScale(d.y);
       })
     )
     .on("end", ticked);
 
   return {
     destroy: () => {
-      simulation.stop();
+      svg.remove();
     },
     nodes: () => {
       return svg.node();

@@ -23,3 +23,7 @@ export interface IComponents {
   nodes: NodesType;
   links: LinksType;
 }
+
+export interface ISearchField {
+  onChange: (value: string) => void;
+}

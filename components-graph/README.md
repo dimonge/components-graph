@@ -109,7 +109,8 @@ yarn cypress-headless:test
 
 **Sprint 4**
 
-- [ ] Functional Search that highlights matching node names
-  - [ ] Add a `highlightSearch: true` attribute to the nodes, hight the node with highlight color code on the graph.
-  - [ ] Add a autocomplete search that user can select when the names is typed, returns not found if there is no match.
+- [x] Functional Search that highlights matching node names
+  - [x] Add a search that user can select when the names is typed, returns not found if there is no match.
+- [ ] Unit test the graph functions and React components
+- [ ] End-to-end test cases
 ```

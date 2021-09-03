@@ -7,6 +7,14 @@ import SearchField from "./components/SearchField";
 import Profile from "./components/Profile";
 
 function App() {
+  const [searchText, setSearchText] = React.useState("");
+
+  const onSearchComponents = React.useCallback(
+    (value) => {
+      setSearchText(value);
+    },
+    [searchText]
+  );
   return (
     <div className="container">
       <header className="header">
@@ -14,12 +22,12 @@ function App() {
           <h1>Capital Flow</h1>
         </div>
         <div className="header__action">
-          <SearchField />
+          <SearchField onChange={onSearchComponents} />
           <Profile />
         </div>
       </header>
       <main>
-        <Graph data={data} />
+        <Graph data={data} searchText={searchText} />
       </main>
     </div>
   );
