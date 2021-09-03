@@ -50,7 +50,10 @@ export default function buildGraph(
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "central")
     .attr("fill", (d: any) => {
-      if (searchText && d.name.toLowerCase().indexOf(searchText) !== -1) {
+      if (
+        searchText &&
+        d.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
+      ) {
         return "yellow";
       } else {
         return null;
