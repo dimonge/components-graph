@@ -17,8 +17,6 @@ function Search({ onChange }: ISearchField) {
     setToggleSearch(value);
   };
 
-  console.log("WIDTH: ", width, width < MOBILE_WIDTH_SIZE);
-
   const mobileSearchButton =
     width < MOBILE_WIDTH_SIZE ? (
       <button onClick={() => handleToggleSearch(!toggleSearch)}>
