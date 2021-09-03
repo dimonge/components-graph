@@ -104,10 +104,10 @@ yarn cypress-headless:test
 
 **Sprint 3**
 
-- [ ] Works on mobile (responsive)
-  - [ ] Grid or Flexbox for responsive design
+- [x] Works on mobile (responsive)
+  - [x] Grid or Flexbox for responsive design
 
-**Sprint 3**
+**Sprint 4**
 
 - [ ] Functional Search that highlights matching node names
   - [ ] Add a `highlightSearch: true` attribute to the nodes, hight the node with highlight color code on the graph.

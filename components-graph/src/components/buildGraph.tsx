@@ -10,12 +10,13 @@ export default function buildGraph(
   const nodes = nodesData.map((node: INode) => Object.assign({}, node));
 
   const containerRect = container.getBoundingClientRect();
-  const margin = {
+
+  /*const margin = {
     top: containerRect.top,
     right: containerRect.right,
     bottom: containerRect.bottom,
     left: containerRect.bottom,
-  };
+  };*/
 
   const width: number = containerRect.width;
 
