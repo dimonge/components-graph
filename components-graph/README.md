@@ -84,11 +84,6 @@ The app is hosted on Netlify and can be viewed [here](https://elegant-bohr-f8ee9
       - [x] Integration test with Jest
     - [x] Code coverage for unit, and integration test
       - [x] Code coverage with jest
-  - [x] CI
-    - [x] Automate test and code coverage with Github actions
-      - [x] Run unit and test with jest
-      - [x] Run unit & integration test code coverage
-      - [x] Run the end-to-end test cases
     - [x] Deploy to Netlify
       - [x] Trigger auto deployment to Netlify
 
